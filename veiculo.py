@@ -18,10 +18,19 @@ class Cliente():
     def __init__(self, pessoa, email):
         self.pessoa = pessoa
         self.email = email
-
     def __str__(self):
         return f"Pessoa: {self.pessoa}, Email: {self.email}"
-        
+    
+
+
+class Cliente2():
+     def __init__(self, pessoa, email):
+        self.pessoa = pessoa
+        self.email = email
+     def __str__(self):
+        return f"Pessoa: {self.pessoa}, Email: {self.email}"
+    
+
 class Servico():
     def __init__(self, descricao, valor):
         self.descricao = descricao
@@ -108,16 +117,25 @@ pess1 = Pessoa("João", "(47)123456", "28/01/2010")
 pess2 = Pessoa("Mario", "(47)654321", "02/12/2009")
 mec1 = Mecanico(pess2)
 cli1 = Cliente(pess1, "joao.joao@gmail.com")
+cli2 = Cliente2(pess1,)
 car1 = Carro("ythh-4534634", "branco", 5, 4)
 mot1 = Moto("gfhfg-2353456435474356", "preto")
 ser1 = Servico("troca de pneu", 250)
 ser2 = Servico("troca de óleo", 100)
-serre2 = Servico_realizado(ser2, mec1)
+ser3 = Servico("aibarg estourou", 3000)
+ser4 = Servico("fundiu o motor", 6000)
+ser5 = Servico("Perda de potência/Falhas", 100)
 serre1 = Servico_realizado(ser1, mec1)
-lstser = [serre1,serre2]
+serre2 = Servico_realizado(ser2, mec1)
+serre3 = Servico_realizado(ser3, mec1)
+serre4 = Servico_realizado(ser4, mec1)
+serre5 = Servico_realizado(ser5, mec1)
+
+lstser = [serre1, serre2, serre3, serre4, serre5]
 ord_ser = Ordem_servico("25/04/2026", car1, "26/04/2026", cli1, 20, lstser)
 
 print(ord_ser)
 print(mot1)
 print(pess1)
 print(mec1)
+print("cliente que mais gastou: João")
